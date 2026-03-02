@@ -195,10 +195,10 @@ STYLE: Professional, specific, no buzzwords.
             partnership_goal_clean = partnership_goal_clean[: partnership_goal_clean.rfind(bad)].rstrip()
 
     final_message = (
-        f"Hi {first_name}\n\n"
+        f"Hi {first_name},\n\n"
         f"{partnership_goal_clean}\n\n"
         f"{response.social_proof_line}\n\n"
-        "Would you be open to a quick 15-min chat? Feel free to book via my Calendly link below\n\n {CALENDLY_LINK}\n\n"
+        f"Would you be open to a quick 15-min chat? Feel free to book via my Calendly link below\n\n {CALENDLY_LINK}\n\n"
         "Best regards,\n\n"
         f"{SENDER_NAME}\n"
         f"{SENDER_ROLE}, Armature Labs\n"
@@ -208,7 +208,7 @@ STYLE: Professional, specific, no buzzwords.
     logger.info("Assembled final email")
     logger.opt(raw=True).info("Thinking: {}", response.thinking)
     logger.opt(raw=True).info("Subject: {}", subject)
-    logger.opt(raw=True).info("Body:\n{}", final_message)
+    logger.opt(raw=True).info("Body:\n{}\n", final_message)
     logger.success("Outreach generation complete")
 
     return {
