@@ -9,7 +9,7 @@ from loguru import logger
 from pydantic import BaseModel, Field
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model_id = "Qwen/Qwen3-4B-Thinking-2507"
+model_id = "unsloth/Qwen3-4B-Thinking-2507-GGUF"
 logger.info("Loading tokenizer and model: {}", model_id)
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 hf_model = AutoModelForCausalLM.from_pretrained(
